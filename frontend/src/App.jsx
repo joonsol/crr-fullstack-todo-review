@@ -90,7 +90,7 @@ function App() {
   }
   const onDelete = async (id) => {
     try {
-      const { data } = await axios.delete(`${API}/${id}`);
+      const { data } = await api.delete(`${API}/${id}`);
 
       // 1) 서버가 남은 목록을 내려주는 경우
       if (Array.isArray(data?.todos)) {
