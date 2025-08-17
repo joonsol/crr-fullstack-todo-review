@@ -112,11 +112,11 @@ function App() {
       <Header />
       <TodoEditor onCreate={onCreate} />
       <TodoList
-       todos={Array.isArray(todos) ? todos : []}
-        updatedChecked={onUpdatedChecked} 
-        onDelete={onDelete} 
+        todos={Array.isArray(todos) ? todos : []}
+        updatedChecked={onUpdatedChecked}
+        onDelete={onDelete}
         updatedText={updatedText}
-         />
+      />
     </div>
   )
 }
