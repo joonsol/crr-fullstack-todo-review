@@ -1,0 +1,59 @@
+.TodoItem {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 10px ;
+    border-bottom: 1px solid rgb(240, 240, 240);
+}
+.content-wrap ,
+.edit-wrap{
+  display: flex;
+  width: 100%;
+  gap: 10px;
+}
+
+.edit-wrap input.edit-input,
+.content-wrap .content{
+  flex: 1;
+}
+
+.TodoItem input {
+    width: 20px;
+}
+
+.TodoItem .content {
+    flex: 1;
+}
+
+.TodoItem .date {
+    font-size: 14px;
+    color: gray;
+}
+
+.TodoItem button {
+    cursor: pointer;
+    color: gray;
+    font-size: 14px;
+    border: none;
+    border-radius: 5px;
+    padding: 5px;
+    color: #fff;
+}
+.updateBtn {
+    background-color: rgb(80, 223, 180);
+  }
+  .deleteBtn {
+    background-color: rgb(255, 121, 112);
+}
+.btn-wrap {
+  display: flex;
+  gap: 10px;
+}
+.TodoItem.is-completed{
+  background-color: #f8f8f8;
+}
+.TodoItem.is-completed .content{
+  color:#c5c5c5;
+  text-decoration: line-through;
+  
+}
