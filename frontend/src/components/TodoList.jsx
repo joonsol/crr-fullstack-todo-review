@@ -1,7 +1,7 @@
 import "./TodoList.css";
 import TodoItem from "./TodoItem";
 import React, { useMemo, useState } from "react";
-const TodoList = ({todos,updatedChecked,updatedText ,onDelete}) => {
+const TodoList = ({todos,updatedChecked, onUpdateTodo,onDelete}) => {
 
   const [q, setQ] = useState("");
 
@@ -19,7 +19,7 @@ const TodoList = ({todos,updatedChecked,updatedText ,onDelete}) => {
         onChange={(e) => setQ(e.target.value)}/>
       <div className="todos_wrapper">
         {filtered.map((todo, i) => (
-          <TodoItem key={i} todo={todo} onDelete={onDelete}  updatedChecked={updatedChecked} updatedText={updatedText}/>
+          <TodoItem key={i} todo={todo} onDelete={onDelete}  updatedChecked={updatedChecked} onUpdateTodo={onUpdateTodo}/>
         ))}
       </div>
     </div>
