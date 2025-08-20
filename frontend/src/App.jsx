@@ -88,24 +88,24 @@ function App() {
       console.error(" 체크 상태 업데이트 실패", error)
     }
   }
-const putTodo = async (id, partial) => {
-  const current = Array.isArray(todos) ? todos.find(t => t._id === id) : null;
-  if (!current) throw new Error('해당 ID의 todo를 찾을 수 없습니다.');
+  const putTodo = async (id, partial) => {
+    const current = Array.isArray(todos) ? todos.find(t => t._id === id) : null;
+    if (!current) throw new Error('해당 ID의 todo를 찾을 수 없습니다.');
 
-  const payload = { ...current, ...partial }; // 전체 교체 대비
-  const { data } = await api.put(`/api/todos/${id}`, payload);
-  const updated = data?.updated ?? data?.todo ?? data;
+    const payload = { ...current, ...partial }; // 전체 교체 대비
+    const { data } = await api.put(`/api/todos/${id}`, payload);
+    const updated = data?.updated ?? data?.todo ?? data;
 
-  setTodos(prev => prev.map(t => (t._id === updated._id ? updated : t)));
-  return updated;
-};
-const onUpdateTodo = async (id, partial) => {
-  try {
-    await putTodo(id, partial); // { text, date } 등
-  } catch (e) {
-    console.error('텍스트/날짜 업데이트 실패', e);
-  }
-};
+    setTodos(prev => prev.map(t => (t._id === updated._id ? updated : t)));
+    return updated;
+  };
+  const onUpdateTodo = async (id, partial) => {
+    try {
+      await putTodo(id, partial); // { text, date } 등
+    } catch (e) {
+      console.error('텍스트/날짜 업데이트 실패', e);
+    }
+  };
   const onDelete = async (id) => {
     try {
       const { data } = await api.delete(`${API}/${id}`);
