@@ -24,7 +24,7 @@ router.post('/guest', (req, res) => {
         // 4) HttpOnly 쿠키 설정
         res.cookie('auth', token, {
             httpOnly: true,
-            sameSite: 'lax',
+            sameSite: 'none',
             secure: false, // 프로덕션(HTTPS)에서는 true 권장
             maxAge: 7 * 24 * 60 * 60 * 1000,
             path: '/',     // 필요시 스코프 조정
